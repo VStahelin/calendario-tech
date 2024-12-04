@@ -26,7 +26,6 @@ jobs:
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20
         with:
-          vercel_token: ${{ secrets.VERCEL_TOKEN }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          vercel_build_env: NODE_ENV=production
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           working-directory: ./backend
