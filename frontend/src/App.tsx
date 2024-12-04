@@ -4,19 +4,12 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 
 function App() {
+  const basename = process.env.NODE_ENV === 'production' ? '/calendario-istepo' : '/';
+
   return (
-    <Router>
+    <Router basename={basename}>
       <Routes>
-      {/* <Route
-          path={
-            process.env.NODE_ENV === 'production' ? '/calendario-istepo/' : '/'
-          }
-          element={<Home />}
-        /> */}
-        <Route
-          path='/'
-          element={<Home />}
-        />
+        <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
