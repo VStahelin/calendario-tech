@@ -43,3 +43,5 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           artifact_name: frontend-dist
+          emit_telemetry: false
+          token: ${{ secrets.GITHUB_TOKEN }}
