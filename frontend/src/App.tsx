@@ -7,10 +7,14 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route
+      {/* <Route
           path={
             process.env.NODE_ENV === 'production' ? '/calendario-istepo/' : '/'
           }
+          element={<Home />}
+        /> */}
+        <Route
+          path='/'
           element={<Home />}
         />
         <Route path="*" element={<NotFound />} />
