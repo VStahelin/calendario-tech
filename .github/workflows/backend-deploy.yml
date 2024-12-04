@@ -24,8 +24,9 @@ jobs:
         run: npm install --prefix ./backend
 
       - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v20
+        uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          working-directory: ./backend
+          vercel-args: "--prod"
+          working-directory: ./backend/dist
