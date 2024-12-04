@@ -4,6 +4,7 @@ import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  base: '/calendario-istepo/',
   plugins: [
     react(),
     VitePWA({
@@ -47,27 +48,6 @@ export default defineConfig({
   css: {
     postcss: {
       plugins: [tailwindcss()],
-    },
-  },
-  build: {
-    manifest: true,
-    chunkSizeWarningLimit: 3000,
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
-              return 'react-vendors';
-            }
-            if (id.includes('lodash')) {
-              return 'lodash-vendors';
-            }
-            if (id.includes('bootstrap')) {
-              return 'bootstrap-vendors';
-            }
-          }
-        },
-      },
     },
   },
 });
