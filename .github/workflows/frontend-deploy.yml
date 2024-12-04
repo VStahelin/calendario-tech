@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    # paths:
-    #   - "frontend/**"
 
 jobs:
   build:
@@ -19,11 +17,14 @@ jobs:
         with:
           node-version: 22
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install Node Dependencies
-        run: npm install --prefix ./frontend
+        run: pnpm install --prefix ./frontend
 
       - name: Build Project
-        run: npm run build --prefix ./frontend
+        run: pnpm run build --prefix ./frontend
 
       - name: Upload static files as artifact
         uses: actions/upload-pages-artifact@v3
