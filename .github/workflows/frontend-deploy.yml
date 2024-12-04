@@ -21,10 +21,10 @@ jobs:
         run: npm install -g pnpm
 
       - name: Install Node Dependencies
-        run: pnpm install --prefix ./frontend
+        run: pnpm --prefix ./frontend install
 
       - name: Build Project
-        run: pnpm run build --prefix ./frontend
+        run: pnpm --prefix ./frontend run build
 
       - name: Upload static files as artifact
         uses: actions/upload-pages-artifact@v3
