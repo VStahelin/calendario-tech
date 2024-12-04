@@ -17,8 +17,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.21.1",
-    "monorepo": "file:.."
+    "express": "^4.21.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
