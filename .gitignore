@@ -8,7 +8,6 @@ frontend/.env
 backend/node_modules
 backend/dist
 *.vercel
-*.env
 
 # Logs
 logs
