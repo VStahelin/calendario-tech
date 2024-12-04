@@ -4,8 +4,11 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "frontend/**"
+    # paths:
+    #   - "frontend/**"
+
+env:
+  FRONTEND_DIR: ./frontend # Definindo uma variável de contexto
 
 jobs:
   build:
@@ -17,18 +20,18 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
-      - name: Install Dependencies
-        run: npm install --prefix ./frontend
+      - name: Install Node Dependencies
+        run: npm ci --prefix ${{ env.FRONTEND_DIR }}
 
       - name: Build Project
-        run: npm run build --prefix ./frontend
+        run: npm run build --prefix ${{ env.FRONTEND_DIR }}
 
       - name: Upload static files as artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./frontend/dist/."
+          path: "${{ env.FRONTEND_DIR }}/dist/."
 
   deploy:
     needs: build
