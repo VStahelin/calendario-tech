@@ -24,14 +24,14 @@ export default tseslint.config(
         'error',
         {
           groups: [
-            ['builtin', 'external'], // Módulos nativos do Node e dependências externas
-            'internal', // Imports internos do projeto
-            ['sibling', 'parent'], // Imports de arquivos relacionados
-            'index', // Arquivos index.js/ts
+            ['builtin', 'external'], 
+            'internal', 
+            ['sibling', 'parent'], 
+            'index', 
           ],
           pathGroups: [
             {
-              pattern: '@src/**', // Ajuste para aliases como @src/
+              pattern: '@src/**', 
               group: 'internal',
               position: 'before',
             },
@@ -44,14 +44,12 @@ export default tseslint.config(
           },
         },
       ],
-
-      // Boas práticas de TypeScript
-      '@typescript-eslint/no-unused-vars': ['warn'], // Avisar sobre variáveis não utilizadas
-      '@typescript-eslint/no-explicit-any': 'warn', // Avisar sobre uso do tipo 'any'
+      '@typescript-eslint/no-unused-vars': ['warn'],
+      '@typescript-eslint/no-explicit-any': 'warn', 
       '@typescript-eslint/explicit-function-return-type': [
         'warn',
         { allowExpressions: true },
-      ], // Incentivar a tipagem de funções
+      ], 
     },
   },
 );
